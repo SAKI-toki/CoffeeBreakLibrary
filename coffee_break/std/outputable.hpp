@@ -1,8 +1,8 @@
 /*=============================================================================
   Copyright (c) 2019 yu ishiyama
 =============================================================================*/
-#ifndef COFFEE_BREAK_OPERATOR_OUTPUTABLE_HPP
-#define COFFEE_BREAK_OPERATOR_OUTPUTABLE_HPP
+#ifndef COFFEE_BREAK_STD_OUTPUTABLE_HPP
+#define COFFEE_BREAK_STD_OUTPUTABLE_HPP
 #include <coffee_break/config.hpp>
 
 #include <type_traits>
@@ -30,7 +30,9 @@ inline constexpr bool outputable_v = COFFEE_BREAK_NSS::details::outputable<T>::v
 } // namespace details
 template <typename T>
 using outputabled = COFFEE_BREAK_NSS::enable_if_nullptr_t<COFFEE_BREAK_NSS::details::outputable_v<T>>;
+template <typename T>
+using not_outputabled = COFFEE_BREAK_NSS::enable_if_nullptr_t<!COFFEE_BREAK_NSS::details::outputable_v<T>>;
 
 COFFEE_BREAK_NAMESPACE_END
 
-#endif // COFFEE_BREAK_OPERATOR_OUTPUTABLE_HPP
+#endif // COFFEE_BREAK_STD_OUTPUTABLE_HPP

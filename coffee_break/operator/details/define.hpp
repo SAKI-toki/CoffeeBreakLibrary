@@ -31,31 +31,37 @@
     template <typename T>                                                                       \
     using CONCEPT_NAME =                                                                        \
         COFFEE_BREAK_NSS::enable_if_nullptr_t<COFFEE_BREAK_NSS::details::CLASS_NAME##_v<T>>;    \
+    template <typename T>                                                                       \
+    using not_##CONCEPT_NAME =                                                                  \
+        COFFEE_BREAK_NSS::enable_if_nullptr_t<!COFFEE_BREAK_NSS::details::CLASS_NAME##_v<T>>;   \
     COFFEE_BREAK_NAMESPACE_END
 
-#define COFFEE_BREAK_DIFFERENT_BINARY_OPERATABLE(CLASS_NAME, CONCEPT_NAME, OPERATOR, REFERENCE)   \
-                                                                                                  \
-    COFFEE_BREAK_NAMESPACE_BEGIN                                                                  \
-    namespace details                                                                             \
-    {                                                                                             \
-    template <typename LT, typename RT>                                                           \
-    class CLASS_NAME                                                                              \
-    {                                                                                             \
-        template <typename LU, typename RU>                                                       \
-        static constexpr STD_NSS::true_type check(                                                \
-            decltype(STD_NSS::declval<LU REFERENCE>() OPERATOR STD_NSS::declval<RU>(), nullptr)); \
-        template <typename, typename>                                                             \
-        static constexpr STD_NSS::false_type check(...);                                          \
-                                                                                                  \
-    public:                                                                                       \
-        static constexpr bool value = decltype(check<LT, RT>(nullptr))::value;                    \
-    };                                                                                            \
-    template <typename LT, typename RT>                                                           \
-    inline constexpr bool CLASS_NAME##_v = COFFEE_BREAK_NSS::details::CLASS_NAME<LT, RT>::value;  \
-    }                                                                                             \
-    template <typename LT, typename RT>                                                           \
-    using CONCEPT_NAME =                                                                          \
-        COFFEE_BREAK_NSS::enable_if_nullptr_t<COFFEE_BREAK_NSS::details::CLASS_NAME##_v<LT, RT>>; \
+#define COFFEE_BREAK_DIFFERENT_BINARY_OPERATABLE(CLASS_NAME, CONCEPT_NAME, OPERATOR, REFERENCE)    \
+                                                                                                   \
+    COFFEE_BREAK_NAMESPACE_BEGIN                                                                   \
+    namespace details                                                                              \
+    {                                                                                              \
+    template <typename LT, typename RT>                                                            \
+    class CLASS_NAME                                                                               \
+    {                                                                                              \
+        template <typename LU, typename RU>                                                        \
+        static constexpr STD_NSS::true_type check(                                                 \
+            decltype(STD_NSS::declval<LU REFERENCE>() OPERATOR STD_NSS::declval<RU>(), nullptr));  \
+        template <typename, typename>                                                              \
+        static constexpr STD_NSS::false_type check(...);                                           \
+                                                                                                   \
+    public:                                                                                        \
+        static constexpr bool value = decltype(check<LT, RT>(nullptr))::value;                     \
+    };                                                                                             \
+    template <typename LT, typename RT>                                                            \
+    inline constexpr bool CLASS_NAME##_v = COFFEE_BREAK_NSS::details::CLASS_NAME<LT, RT>::value;   \
+    }                                                                                              \
+    template <typename LT, typename RT>                                                            \
+    using CONCEPT_NAME =                                                                           \
+        COFFEE_BREAK_NSS::enable_if_nullptr_t<COFFEE_BREAK_NSS::details::CLASS_NAME##_v<LT, RT>>;  \
+    template <typename LT, typename RT>                                                            \
+    using not_##CONCEPT_NAME =                                                                     \
+        COFFEE_BREAK_NSS::enable_if_nullptr_t<!COFFEE_BREAK_NSS::details::CLASS_NAME##_v<LT, RT>>; \
     COFFEE_BREAK_NAMESPACE_END
 
 #define COFFEE_BREAK_SAME_ARITHMETIC_OPERATABLE(CLASS_NAME, CONCEPT_NAME, OPERATOR) \
