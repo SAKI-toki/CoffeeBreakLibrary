@@ -1,6 +1,6 @@
 # CoffeeBreakLibrary
-=============================================
 メタプログラミングの共通部(addableなど)
+
 ##使用例
 ~~~
 #include <coffee_break/operator.hpp>
