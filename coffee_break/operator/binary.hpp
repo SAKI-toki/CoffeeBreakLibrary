@@ -1,11 +1,11 @@
 /*=============================================================================
   Copyright (c) 2019 yu ishiyama
 =============================================================================*/
-#ifndef COFFEE_BREAK_TYPE_TRAITS_OPERATOR_BINARY_HPP
-#define COFFEE_BREAK_TYPE_TRAITS_OPERATOR_BINARY_HPP
+#ifndef COFFEE_BREAK_OPERATOR_BINARY_HPP
+#define COFFEE_BREAK_OPERATOR_BINARY_HPP
 #include <coffee_break/config.hpp>
 
-#include <coffee_break/operator/macro.hpp>
+#include <coffee_break/operator/details/define.hpp>
 
 COFFEE_BREAK_ARITHMETIC_OPERATABLE(addable, addabled, +)
 COFFEE_BREAK_ARITHMETIC_OPERATABLE(substractable, substractabled, -)
@@ -19,4 +19,4 @@ COFFEE_BREAK_COMPOUND_ASSIGNMENT_OPERATABLE(compound_multiplicationable, compoun
 COFFEE_BREAK_COMPOUND_ASSIGNMENT_OPERATABLE(compound_divisionable, compound_divisionabled, /=)
 COFFEE_BREAK_COMPOUND_ASSIGNMENT_OPERATABLE(compound_modable, compound_modabled, %=)
 
-#endif // COFFEE_BREAK_TYPE_TRAITS_OPERATOR_BINARY_HPP
+#endif // COFFEE_BREAK_OPERATOR_BINARY_HPP

@@ -1,8 +1,8 @@
 /*=============================================================================
   Copyright (c) 2019 yu ishiyama
 =============================================================================*/
-#ifndef COFFEE_BREAK_TYPE_TRAITS_OPERATOR_MACRO_HPP
-#define COFFEE_BREAK_TYPE_TRAITS_OPERATOR_MACRO_HPP
+#ifndef COFFEE_BREAK_OPERATOR_DETAILS_DEFINE_HPP
+#define COFFEE_BREAK_OPERATOR_DETAILS_DEFINE_HPP
 #include <coffee_break/config.hpp>
 
 #include <type_traits>
@@ -78,4 +78,4 @@
     COFFEE_BREAK_SAME_COMPOUND_ASSIGNMENT_OPERATABLE(same_##CLASS_NAME, same_##CONCEPT_NAME, OPERATOR) \
     COFFEE_BREAK_DIFFERENT_COMPOUND_ASSIGNMENT_OPERATABLE(different_##CLASS_NAME, different_##CONCEPT_NAME, OPERATOR)
 
-#endif // COFFEE_BREAK_TYPE_TRAITS_OPERATOR_MACRO_HPP
+#endif // COFFEE_BREAK_OPERATOR_DETAILS_DEFINE_HPP

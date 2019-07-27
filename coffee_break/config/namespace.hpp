@@ -1,12 +1,10 @@
 /*=============================================================================
   Copyright (c) 2019 yu ishiyama
 =============================================================================*/
-#ifndef COFFEE_BREAK_CONFIG_NAMESPACE_MACRO_HPP
-#define COFFEE_BREAK_CONFIG_NAMESPACE_MACRO_HPP
+#ifndef COFFEE_BREAK_CONFIG_NAMESPACE_HPP
+#define COFFEE_BREAK_CONFIG_NAMESPACE_HPP
 
 //NSS = NAMESPACE_SCOPE_SOLUTION
-
-#define COFFEE_BREAK_USE_NAMESPACE
 
 #ifdef COFFEE_BREAK_USE_NAMESPACE
 
@@ -29,4 +27,4 @@
 
 #define STD_NSS ::std
 
-#endif // COFFEE_BREAK_CONFIG_NAMESPACE_MACRO_HPP
+#endif // COFFEE_BREAK_CONFIG_NAMESPACE_HPP

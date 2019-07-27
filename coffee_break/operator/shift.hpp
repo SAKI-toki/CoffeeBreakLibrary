@@ -5,7 +5,7 @@
 #define COFFEE_BREAK_TYPE_TRAITS_OPERATOR_SHIFT_HPP
 #include <coffee_break/config.hpp>
 
-#include <coffee_break/operator/macro.hpp>
+#include <coffee_break/operator/details/define.hpp>
 
 COFFEE_BREAK_ARITHMETIC_OPERATABLE(right_shiftable, right_shiftabled, >>)
 COFFEE_BREAK_ARITHMETIC_OPERATABLE(left_shiftable, left_shiftabled, <<)

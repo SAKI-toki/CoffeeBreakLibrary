@@ -1,8 +1,8 @@
 /*=============================================================================
   Copyright (c) 2019 yu ishiyama
 =============================================================================*/
-#ifndef COFFEE_BREAK_TYPE_TRAITS_OPERATOR_OUTPUTABLE_HPP
-#define COFFEE_BREAK_TYPE_TRAITS_OPERATOR_OUTPUTABLE_HPP
+#ifndef COFFEE_BREAK_OPERATOR_OUTPUTABLE_HPP
+#define COFFEE_BREAK_OPERATOR_OUTPUTABLE_HPP
 #include <coffee_break/config.hpp>
 
 #include <type_traits>
@@ -33,4 +33,4 @@ using outputabled = COFFEE_BREAK_NSS::enable_if_nullptr_t<COFFEE_BREAK_NSS::deta
 
 COFFEE_BREAK_NAMESPACE_END
 
-#endif // COFFEE_BREAK_TYPE_TRAITS_OPERATOR_OUTPUTABLE_HPP
+#endif // COFFEE_BREAK_OPERATOR_OUTPUTABLE_HPP
