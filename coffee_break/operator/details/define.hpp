@@ -32,6 +32,10 @@
     using CONCEPT_NAME =                                                                        \
         COFFEE_BREAK_NSS::enable_if_nullptr_t<                                                  \
             STD_NSS::conjunction_v<COFFEE_BREAK_NSS::details::CLASS_NAME<Types>...>>;           \
+    template <typename... Types>                                                                \
+    using not_##CONCEPT_NAME =                                                                  \
+        COFFEE_BREAK_NSS::enable_if_nullptr_t<                                                  \
+            !STD_NSS::conjunction_v<COFFEE_BREAK_NSS::details::CLASS_NAME<Types>...>>;          \
     COFFEE_BREAK_NAMESPACE_END
 
 #define COFFEE_BREAK_DIFFERENT_BINARY_OPERATABLE(CLASS_NAME, CONCEPT_NAME, OPERATOR, REFERENCE)   \
@@ -58,6 +62,10 @@
     using CONCEPT_NAME =                                                                          \
         COFFEE_BREAK_NSS::enable_if_nullptr_t<                                                    \
             STD_NSS::conjunction_v<COFFEE_BREAK_NSS::details::CLASS_NAME<LT, RTypes>...>>;        \
+    template <typename LT, typename... RTypes>                                                    \
+    using not_##CONCEPT_NAME =                                                                    \
+        COFFEE_BREAK_NSS::enable_if_nullptr_t<                                                    \
+            !STD_NSS::conjunction_v<COFFEE_BREAK_NSS::details::CLASS_NAME<LT, RTypes>...>>;       \
     COFFEE_BREAK_NAMESPACE_END
 
 #define COFFEE_BREAK_UNARY_OPERATABLE(CLASS_NAME, CONCEPT_NAME, FORWARD_OPERATOR, BACK_OPERATOR) \
@@ -84,6 +92,10 @@
     using CONCEPT_NAME =                                                                         \
         COFFEE_BREAK_NSS::enable_if_nullptr_t<                                                   \
             STD_NSS::conjunction_v<COFFEE_BREAK_NSS::details::CLASS_NAME<Types>...>>;            \
+    template <typename... Types>                                                                 \
+    using not_##CONCEPT_NAME =                                                                   \
+        COFFEE_BREAK_NSS::enable_if_nullptr_t<                                                   \
+            !STD_NSS::conjunction_v<COFFEE_BREAK_NSS::details::CLASS_NAME<Types>...>>;           \
     COFFEE_BREAK_NAMESPACE_END
 
 //same
