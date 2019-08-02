@@ -29,38 +29,35 @@
     }                                                                                                                  \
     COFFEE_BREAK_NAMESPACE_END
 
-#define COFFEE_BREAK_SIZE_LEAST _least
-#define COFFEE_BREAK_SIZE_MOST _most
-
 COFFEE_BREAK_SIZE_DEFINE(, ==)
-COFFEE_BREAK_SIZE_DEFINE(COFFEE_BREAK_SIZE_LEAST, <=)
-COFFEE_BREAK_SIZE_DEFINE(COFFEE_BREAK_SIZE_MOST, >=)
+COFFEE_BREAK_SIZE_DEFINE(_least, <=)
+COFFEE_BREAK_SIZE_DEFINE(_most, >=)
 
-#define COFFEE_BREAK_SIZE_VALUE_DEFINE(SIZE_VALUE)                                                                             \
-    template <typename... Types>                                                                                               \
-    using is_size##SIZE_VALUE =                                                                                                \
-        COFFEE_BREAK_NSS::enable_if_nullptr_t<                                                                                 \
-            STD_NSS::conjunction_v<COFFEE_BREAK_NSS::details::is_size<SIZE_VALUE / 8, Types>...>>;                             \
-    template <typename... Types>                                                                                               \
-    using is##COFFEE_BREAK_SIZE_LEAST##_size##SIZE_VALUE =                                                                     \
-        COFFEE_BREAK_NSS::enable_if_nullptr_t<                                                                                 \
-            STD_NSS::conjunction_v<COFFEE_BREAK_NSS::details::is##COFFEE_BREAK_SIZE_LEAST##_size<SIZE_VALUE / 8, Types>...>>;  \
-    template <typename... Types>                                                                                               \
-    using is##COFFEE_BREAK_SIZE_MOST##_size##SIZE_VALUE =                                                                      \
-        COFFEE_BREAK_NSS::enable_if_nullptr_t<                                                                                 \
-            STD_NSS::conjunction_v<COFFEE_BREAK_NSS::details::is##COFFEE_BREAK_SIZE_MOST##_size<SIZE_VALUE / 8, Types>...>>;   \
-    template <typename... Types>                                                                                               \
-    using is_not_size##SIZE_VALUE =                                                                                            \
-        COFFEE_BREAK_NSS::enable_if_nullptr_t<                                                                                 \
-            !STD_NSS::conjunction_v<COFFEE_BREAK_NSS::details::is_size<SIZE_VALUE / 8, Types>...>>;                            \
-    template <typename... Types>                                                                                               \
-    using is_not##COFFEE_BREAK_SIZE_LEAST##_size##SIZE_VALUE =                                                                 \
-        COFFEE_BREAK_NSS::enable_if_nullptr_t<                                                                                 \
-            !STD_NSS::conjunction_v<COFFEE_BREAK_NSS::details::is##COFFEE_BREAK_SIZE_LEAST##_size<SIZE_VALUE / 8, Types>...>>; \
-    template <typename... Types>                                                                                               \
-    using is_not##COFFEE_BREAK_SIZE_MOST##_size##SIZE_VALUE =                                                                  \
-        COFFEE_BREAK_NSS::enable_if_nullptr_t<                                                                                 \
-            !STD_NSS::conjunction_v<COFFEE_BREAK_NSS::details::is##COFFEE_BREAK_SIZE_MOST##_size<SIZE_VALUE / 8, Types>...>>;
+#define COFFEE_BREAK_SIZE_VALUE_DEFINE(SIZE_VALUE)                                                        \
+    template <typename... Types>                                                                          \
+    using is_size##SIZE_VALUE =                                                                           \
+        COFFEE_BREAK_NSS::enable_if_nullptr_t<                                                            \
+            STD_NSS::conjunction_v<COFFEE_BREAK_NSS::details::is_size<SIZE_VALUE / 8, Types>...>>;        \
+    template <typename... Types>                                                                          \
+    using is_least_size##SIZE_VALUE =                                                                     \
+        COFFEE_BREAK_NSS::enable_if_nullptr_t<                                                            \
+            STD_NSS::conjunction_v<COFFEE_BREAK_NSS::details::is_least_size<SIZE_VALUE / 8, Types>...>>;  \
+    template <typename... Types>                                                                          \
+    using is_most_size##SIZE_VALUE =                                                                      \
+        COFFEE_BREAK_NSS::enable_if_nullptr_t<                                                            \
+            STD_NSS::conjunction_v<COFFEE_BREAK_NSS::details::is_most_size<SIZE_VALUE / 8, Types>...>>;   \
+    template <typename... Types>                                                                          \
+    using is_not_size##SIZE_VALUE =                                                                       \
+        COFFEE_BREAK_NSS::enable_if_nullptr_t<                                                            \
+            !STD_NSS::conjunction_v<COFFEE_BREAK_NSS::details::is_size<SIZE_VALUE / 8, Types>...>>;       \
+    template <typename... Types>                                                                          \
+    using is_not_least_size##SIZE_VALUE =                                                                 \
+        COFFEE_BREAK_NSS::enable_if_nullptr_t<                                                            \
+            !STD_NSS::conjunction_v<COFFEE_BREAK_NSS::details::is_least_size<SIZE_VALUE / 8, Types>...>>; \
+    template <typename... Types>                                                                          \
+    using is_not_most_size##SIZE_VALUE =                                                                  \
+        COFFEE_BREAK_NSS::enable_if_nullptr_t<                                                            \
+            !STD_NSS::conjunction_v<COFFEE_BREAK_NSS::details::is_most_size<SIZE_VALUE / 8, Types>...>>;
 
 COFFEE_BREAK_NAMESPACE_BEGIN
 
