@@ -54,11 +54,11 @@ COFFEE_BREAK_SIZE_DEFINE(COFFEE_BREAK_SIZE_MOST, >=)
         COFFEE_BREAK_NSS::enable_if_nullptr_t<                                                                                 \
             !STD_NSS::conjunction_v<COFFEE_BREAK_NSS::details::is_size<SIZE_VALUE / 8, Types>...>>;                            \
     template <typename... Types>                                                                                               \
-    using iss_not##COFFEE_BREAK_SIZE_LEAST##_size##SIZE_VALUE =                                                                \
+    using is_not##COFFEE_BREAK_SIZE_LEAST##_size##SIZE_VALUE =                                                                 \
         COFFEE_BREAK_NSS::enable_if_nullptr_t<                                                                                 \
             !STD_NSS::conjunction_v<COFFEE_BREAK_NSS::details::is##COFFEE_BREAK_SIZE_LEAST##_size<SIZE_VALUE / 8, Types>...>>; \
     template <typename... Types>                                                                                               \
-    using iss_not##COFFEE_BREAK_SIZE_MOST##_size##SIZE_VALUE =                                                                 \
+    using is_not##COFFEE_BREAK_SIZE_MOST##_size##SIZE_VALUE =                                                                  \
         COFFEE_BREAK_NSS::enable_if_nullptr_t<                                                                                 \
             !STD_NSS::conjunction_v<COFFEE_BREAK_NSS::details::is##COFFEE_BREAK_SIZE_MOST##_size<SIZE_VALUE / 8, Types>...>>;
 
