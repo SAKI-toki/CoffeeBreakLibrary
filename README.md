@@ -1,6 +1,9 @@
 # CoffeeBreakLibrary
 メタプログラミングの共通部(addableなど)
 
+## 環境
+C++17以上でのみ使用可能
+
 ## 使用例
 ~~~
 #include <coffee_break/operator.hpp>

@@ -7,7 +7,7 @@
 
 #include <type_traits>
 #include <coffee_break/common/enable_if_nullptr.hpp>
-#include <iostream>
+#include <ostream>
 
 COFFEE_BREAK_NAMESPACE_BEGIN
 
