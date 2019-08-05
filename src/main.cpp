@@ -4,13 +4,8 @@
 #include <coffee_break/std.hpp>
 #include <iostream>
 
-template <typename T, coffee_break::same_addabled<T> = nullptr>
-T f(T x) { return x + x; }
-
 int main()
 {
-    int n;
-    std::cin >> n;
-    std::cout << f(n);
+    [[maybe_unused]] coffee_break::this_is_array<std::array<int, 2>, std::array<double, 0>> n = nullptr;
     return 0;
 }
