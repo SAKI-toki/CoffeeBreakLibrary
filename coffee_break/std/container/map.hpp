@@ -1,8 +1,8 @@
 /*=============================================================================
   Copyright (c) 2019 yu ishiyama
 =============================================================================*/
-#ifndef COFFEE_BREAK_STD_CONTAINER_QUEUE_HPP
-#define COFFEE_BREAK_STD_CONTAINER_QUEUE_HPP
+#ifndef COFFEE_BREAK_STD_CONTAINER_MAP_HPP
+#define COFFEE_BREAK_STD_CONTAINER_MAP_HPP
 #include <coffee_break/config.hpp>
 
 #include <coffee_break/common/enable_if_nullptr.hpp>
@@ -103,4 +103,4 @@ using this_is_not_unordered_multimap = COFFEE_BREAK_NSS::enable_if_nullptr_t<
 
 COFFEE_BREAK_NAMESPACE_END
 
-#endif // COFFEE_BREAK_STD_CONTAINER_QUEUE_HPP
+#endif // COFFEE_BREAK_STD_CONTAINER_MAP_HPP
