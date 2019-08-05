@@ -17,8 +17,8 @@ template <typename>
 struct is_vector : STD_NSS::false_type
 {
 };
-template <typename T, typename Alloc>
-struct is_vector<STD_NSS::vector<T, Alloc>> : STD_NSS::true_type
+template <typename T, typename AllocType>
+struct is_vector<STD_NSS::vector<T, AllocType>> : STD_NSS::true_type
 {
 };
 
