@@ -13,20 +13,20 @@ COFFEE_BREAK_NAMESPACE_BEGIN
 
 namespace details
 {
-template <typename T>
-class outputable
-{
-  template <typename U>
-  static constexpr STD_NSS::true_type check(
-      decltype(STD_NSS::declval<STD_NSS::ostream &>() << STD_NSS::declval<U>(), nullptr));
-  template <typename U>
-  static constexpr STD_NSS::false_type check(...);
+  template <typename T>
+  class outputable
+  {
+    template <typename U>
+    static constexpr STD_NSS::true_type check(
+        decltype(STD_NSS::declval<STD_NSS::ostream &>() << STD_NSS::declval<U>(), nullptr));
+    template <typename U>
+    static constexpr STD_NSS::false_type check(...);
 
-public:
-  static constexpr bool value = decltype(check<T>(nullptr))::value;
-};
-template <typename T>
-inline constexpr bool outputable_v = COFFEE_BREAK_NSS::details::outputable<T>::value;
+  public:
+    static constexpr bool value = decltype(check<T>(nullptr))::value;
+  };
+  template <typename T>
+  inline constexpr bool outputable_v = COFFEE_BREAK_NSS::details::outputable<T>::value;
 } // namespace details
 template <typename T>
 using outputabled = COFFEE_BREAK_NSS::enable_if_nullptr_t<COFFEE_BREAK_NSS::details::outputable_v<T>>;

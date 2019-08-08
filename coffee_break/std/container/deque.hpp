@@ -13,17 +13,17 @@ COFFEE_BREAK_NAMESPACE_BEGIN
 
 namespace details
 {
-template <typename>
-struct is_deque : STD_NSS::false_type
-{
-};
-template <typename T, typename AllocType>
-struct is_deque<std::deque<T, AllocType>> : STD_NSS::true_type
-{
-};
+  template <typename>
+  struct is_deque : STD_NSS::false_type
+  {
+  };
+  template <typename T, typename AllocType>
+  struct is_deque<std::deque<T, AllocType>> : STD_NSS::true_type
+  {
+  };
 
-template <typename T>
-inline constexpr bool is_deque_v = COFFEE_BREAK_NSS::details::is_deque<T>::value;
+  template <typename T>
+  inline constexpr bool is_deque_v = COFFEE_BREAK_NSS::details::is_deque<T>::value;
 
 } // namespace details
 

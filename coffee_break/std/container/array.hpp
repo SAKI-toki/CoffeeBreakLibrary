@@ -13,17 +13,17 @@ COFFEE_BREAK_NAMESPACE_BEGIN
 
 namespace details
 {
-template <typename>
-struct is_array : STD_NSS::false_type
-{
-};
-template <typename T, std::size_t Size>
-struct is_array<std::array<T, Size>> : STD_NSS::true_type
-{
-};
+  template <typename>
+  struct is_array : STD_NSS::false_type
+  {
+  };
+  template <typename T, std::size_t Size>
+  struct is_array<std::array<T, Size>> : STD_NSS::true_type
+  {
+  };
 
-template <typename T>
-inline constexpr bool is_array_v = COFFEE_BREAK_NSS::details::is_array<T>::value;
+  template <typename T>
+  inline constexpr bool is_array_v = COFFEE_BREAK_NSS::details::is_array<T>::value;
 
 } // namespace details
 

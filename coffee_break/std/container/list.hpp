@@ -15,31 +15,31 @@ COFFEE_BREAK_NAMESPACE_BEGIN
 namespace details
 {
 
-//list
-template <typename>
-struct is_list : STD_NSS::false_type
-{
-};
-template <typename T, typename AllocType>
-struct is_list<STD_NSS::list<T, AllocType>> : STD_NSS::true_type
-{
-};
+  //list
+  template <typename>
+  struct is_list : STD_NSS::false_type
+  {
+  };
+  template <typename T, typename AllocType>
+  struct is_list<STD_NSS::list<T, AllocType>> : STD_NSS::true_type
+  {
+  };
 
-template <typename T>
-inline constexpr bool is_list_v = COFFEE_BREAK_NSS::details::is_list<T>::value;
+  template <typename T>
+  inline constexpr bool is_list_v = COFFEE_BREAK_NSS::details::is_list<T>::value;
 
-//forward_list
-template <typename>
-struct is_forward_list : STD_NSS::false_type
-{
-};
-template <typename T, typename AllocType>
-struct is_forward_list<STD_NSS::forward_list<T, AllocType>> : STD_NSS::true_type
-{
-};
+  //forward_list
+  template <typename>
+  struct is_forward_list : STD_NSS::false_type
+  {
+  };
+  template <typename T, typename AllocType>
+  struct is_forward_list<STD_NSS::forward_list<T, AllocType>> : STD_NSS::true_type
+  {
+  };
 
-template <typename T>
-inline constexpr bool is_forward_list_v = COFFEE_BREAK_NSS::details::is_forward_list<T>::value;
+  template <typename T>
+  inline constexpr bool is_forward_list_v = COFFEE_BREAK_NSS::details::is_forward_list<T>::value;
 
 } // namespace details
 

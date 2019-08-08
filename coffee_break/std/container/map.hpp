@@ -15,57 +15,57 @@ COFFEE_BREAK_NAMESPACE_BEGIN
 namespace details
 {
 
-//map
-template <typename>
-struct is_map : STD_NSS::false_type
-{
-};
-template <typename KeyType, typename ValueType, typename CompareType, typename AllocType>
-struct is_map<std::map<KeyType, ValueType, CompareType, AllocType>> : STD_NSS::true_type
-{
-};
+  //map
+  template <typename>
+  struct is_map : STD_NSS::false_type
+  {
+  };
+  template <typename KeyType, typename ValueType, typename CompareType, typename AllocType>
+  struct is_map<std::map<KeyType, ValueType, CompareType, AllocType>> : STD_NSS::true_type
+  {
+  };
 
-template <typename T>
-inline constexpr bool is_map_v = COFFEE_BREAK_NSS::details::is_map<T>::value;
+  template <typename T>
+  inline constexpr bool is_map_v = COFFEE_BREAK_NSS::details::is_map<T>::value;
 
-//multimap
-template <typename>
-struct is_multimap : STD_NSS::false_type
-{
-};
-template <typename KeyType, typename ValueType, typename CompareType, typename AllocType>
-struct is_multimap<std::multimap<KeyType, ValueType, CompareType, AllocType>> : STD_NSS::true_type
-{
-};
+  //multimap
+  template <typename>
+  struct is_multimap : STD_NSS::false_type
+  {
+  };
+  template <typename KeyType, typename ValueType, typename CompareType, typename AllocType>
+  struct is_multimap<std::multimap<KeyType, ValueType, CompareType, AllocType>> : STD_NSS::true_type
+  {
+  };
 
-template <typename T>
-inline constexpr bool is_multimap_v = COFFEE_BREAK_NSS::details::is_multimap<T>::value;
+  template <typename T>
+  inline constexpr bool is_multimap_v = COFFEE_BREAK_NSS::details::is_multimap<T>::value;
 
-//unordered_map
-template <typename>
-struct is_unordered_map : STD_NSS::false_type
-{
-};
-template <typename KeyType, typename ValueType, typename HashType, typename PredType, typename AllocType>
-struct is_unordered_map<std::unordered_map<KeyType, ValueType, HashType, PredType, AllocType>> : STD_NSS::true_type
-{
-};
+  //unordered_map
+  template <typename>
+  struct is_unordered_map : STD_NSS::false_type
+  {
+  };
+  template <typename KeyType, typename ValueType, typename HashType, typename PredType, typename AllocType>
+  struct is_unordered_map<std::unordered_map<KeyType, ValueType, HashType, PredType, AllocType>> : STD_NSS::true_type
+  {
+  };
 
-template <typename T>
-inline constexpr bool is_unordered_map_v = COFFEE_BREAK_NSS::details::is_unordered_map<T>::value;
+  template <typename T>
+  inline constexpr bool is_unordered_map_v = COFFEE_BREAK_NSS::details::is_unordered_map<T>::value;
 
-//unordered_multimap
-template <typename>
-struct is_unordered_multimap : STD_NSS::false_type
-{
-};
-template <typename KeyType, typename ValueType, typename HashType, typename PredType, typename AllocType>
-struct is_unordered_multimap<std::unordered_multimap<KeyType, ValueType, HashType, PredType, AllocType>> : STD_NSS::true_type
-{
-};
+  //unordered_multimap
+  template <typename>
+  struct is_unordered_multimap : STD_NSS::false_type
+  {
+  };
+  template <typename KeyType, typename ValueType, typename HashType, typename PredType, typename AllocType>
+  struct is_unordered_multimap<std::unordered_multimap<KeyType, ValueType, HashType, PredType, AllocType>> : STD_NSS::true_type
+  {
+  };
 
-template <typename T>
-inline constexpr bool is_unordered_multimap_v = COFFEE_BREAK_NSS::details::is_unordered_multimap<T>::value;
+  template <typename T>
+  inline constexpr bool is_unordered_multimap_v = COFFEE_BREAK_NSS::details::is_unordered_multimap<T>::value;
 
 } // namespace details
 

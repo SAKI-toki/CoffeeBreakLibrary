@@ -13,17 +13,17 @@ COFFEE_BREAK_NAMESPACE_BEGIN
 
 namespace details
 {
-template <typename>
-struct is_stack : STD_NSS::false_type
-{
-};
-template <typename T, typename ContainerType>
-struct is_stack<std::stack<T, ContainerType>> : STD_NSS::true_type
-{
-};
+  template <typename>
+  struct is_stack : STD_NSS::false_type
+  {
+  };
+  template <typename T, typename ContainerType>
+  struct is_stack<std::stack<T, ContainerType>> : STD_NSS::true_type
+  {
+  };
 
-template <typename T>
-inline constexpr bool is_stack_v = COFFEE_BREAK_NSS::details::is_stack<T>::value;
+  template <typename T>
+  inline constexpr bool is_stack_v = COFFEE_BREAK_NSS::details::is_stack<T>::value;
 
 } // namespace details
 
