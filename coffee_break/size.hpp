@@ -12,7 +12,7 @@
   COFFEE_BREAK_NAMESPACE_BEGIN                                                 \
   namespace details                                                            \
   {                                                                            \
-    template <decltype(sizeof(void *)) SizeValue, typename T>                  \
+    template <decltype(sizeof(void*)) SizeValue, typename T>                   \
     class is##ADD_NAME##_size                                                  \
     {                                                                          \
       template <typename U>                                                    \
@@ -25,7 +25,7 @@
     public:                                                                    \
       inline static constexpr bool value = decltype(check<T>(nullptr))::value; \
     };                                                                         \
-    template <decltype(sizeof(void *)) SizeValue, typename T>                  \
+    template <decltype(sizeof(void*)) SizeValue, typename T>                   \
     inline constexpr bool is##ADD_NAME##_size_v =                              \
         COFFEE_BREAK_NSS::details::is##ADD_NAME##_size<SizeValue, T>::value;   \
   }                                                                            \

@@ -19,6 +19,8 @@ void f(T)
 
 int main()
 {
+  // abc
+  int* p;
   f(10);
   f(std::set<int>{});
   return 0;

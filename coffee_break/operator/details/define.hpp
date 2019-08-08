@@ -87,7 +87,7 @@
     {                                                                          \
       template <typename U>                                                    \
       static constexpr STD_NSS::true_type                                      \
-      check(decltype(FORWARD_OPERATOR STD_NSS::declval<U &>() BACK_OPERATOR,   \
+      check(decltype(FORWARD_OPERATOR STD_NSS::declval<U&>() BACK_OPERATOR,    \
                      nullptr));                                                \
       template <typename>                                                      \
       static constexpr STD_NSS::false_type check(...);                         \

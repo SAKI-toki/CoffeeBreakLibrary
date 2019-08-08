@@ -17,10 +17,9 @@ namespace details
   class outputable
   {
     template <typename U>
-    static constexpr STD_NSS::true_type
-    check(decltype(STD_NSS::declval<STD_NSS::ostream &>()
-                       << STD_NSS::declval<U>(),
-                   nullptr));
+    static constexpr STD_NSS::true_type check(
+        decltype(STD_NSS::declval<STD_NSS::ostream&>() << STD_NSS::declval<U>(),
+                 nullptr));
     template <typename U>
     static constexpr STD_NSS::false_type check(...);
 
