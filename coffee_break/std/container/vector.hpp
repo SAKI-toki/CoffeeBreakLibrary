@@ -23,7 +23,8 @@ namespace details
   };
 
   template <typename T>
-  inline constexpr bool is_vector_v = COFFEE_BREAK_NSS::details::is_vector<T>::value;
+  inline constexpr bool is_vector_v =
+      COFFEE_BREAK_NSS::details::is_vector<T>::value;
 
 } // namespace details
 

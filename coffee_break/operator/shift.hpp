@@ -10,7 +10,9 @@
 COFFEE_BREAK_ARITHMETIC_OPERATABLE(right_shiftable, right_shiftabled, >>)
 COFFEE_BREAK_ARITHMETIC_OPERATABLE(left_shiftable, left_shiftabled, <<)
 
-COFFEE_BREAK_COMPOUND_ASSIGNMENT_OPERATABLE(compound_right_shiftable, compound_right_shiftabled, >>=)
-COFFEE_BREAK_COMPOUND_ASSIGNMENT_OPERATABLE(compound_left_shiftable, compound_left_shiftabled, <<=)
+COFFEE_BREAK_COMPOUND_ASSIGNMENT_OPERATABLE(compound_right_shiftable,
+                                            compound_right_shiftabled, >>=)
+COFFEE_BREAK_COMPOUND_ASSIGNMENT_OPERATABLE(compound_left_shiftable,
+                                            compound_left_shiftabled, <<=)
 
 #endif // COFFEE_BREAK_TYPE_TRAITS_OPERATOR_SHIFT_HPP

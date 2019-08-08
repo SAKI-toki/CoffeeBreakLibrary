@@ -23,7 +23,8 @@ namespace details
   };
 
   template <typename T>
-  inline constexpr bool is_deque_v = COFFEE_BREAK_NSS::details::is_deque<T>::value;
+  inline constexpr bool is_deque_v =
+      COFFEE_BREAK_NSS::details::is_deque<T>::value;
 
 } // namespace details
 

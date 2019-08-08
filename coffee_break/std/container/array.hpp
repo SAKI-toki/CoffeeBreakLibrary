@@ -23,7 +23,8 @@ namespace details
   };
 
   template <typename T>
-  inline constexpr bool is_array_v = COFFEE_BREAK_NSS::details::is_array<T>::value;
+  inline constexpr bool is_array_v =
+      COFFEE_BREAK_NSS::details::is_array<T>::value;
 
 } // namespace details
 

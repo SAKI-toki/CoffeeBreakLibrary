@@ -5,15 +5,13 @@
 
 #include <iostream>
 
-template <typename T,
-          coffee_break::this_is_set<T> = nullptr>
+template <typename T, coffee_break::this_is_set<T> = nullptr>
 void f(T)
 {
   std::cout << "this is set" << std::endl;
 }
 
-template <typename T,
-          coffee_break::this_is_not_set<T> = nullptr>
+template <typename T, coffee_break::this_is_not_set<T> = nullptr>
 void f(T)
 {
   std::cout << "this is not set" << std::endl;

@@ -23,7 +23,8 @@ namespace details
   };
 
   template <typename T>
-  inline constexpr bool is_stack_v = COFFEE_BREAK_NSS::details::is_stack<T>::value;
+  inline constexpr bool is_stack_v =
+      COFFEE_BREAK_NSS::details::is_stack<T>::value;
 
 } // namespace details
 
