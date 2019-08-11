@@ -13,18 +13,18 @@ COFFEE_BREAK_NAMESPACE_BEGIN
 
 namespace details
 {
-  template <typename>
-  struct is_vector : STD_NSS::false_type
-  {
-  };
-  template <typename T, typename AllocType>
-  struct is_vector<STD_NSS::vector<T, AllocType>> : STD_NSS::true_type
-  {
-  };
+template <typename>
+struct is_vector : STD_NSS::false_type
+{
+};
+template <typename T, typename AllocType>
+struct is_vector<STD_NSS::vector<T, AllocType>> : STD_NSS::true_type
+{
+};
 
-  template <typename T>
-  inline constexpr bool is_vector_v =
-      COFFEE_BREAK_NSS::details::is_vector<T>::value;
+template <typename T>
+inline constexpr bool is_vector_v =
+    COFFEE_BREAK_NSS::details::is_vector<T>::value;
 
 } // namespace details
 

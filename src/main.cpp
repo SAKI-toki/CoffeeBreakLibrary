@@ -5,23 +5,25 @@
 
 #include <iostream>
 
-template <typename T, coffee_break::this_is_set<T> = nullptr>
-void f(T)
+template <typename... Types,
+          COFFEE_BREAK_NSS::outputabled<Types...> = nullptr>
+void output(Types... args)
 {
-  std::cout << "this is set" << std::endl;
+  (std::cout << ... << args) << std::endl;
 }
 
-template <typename T, coffee_break::this_is_not_set<T> = nullptr>
-void f(T)
+struct X
 {
-  std::cout << "this is not set" << std::endl;
+};
+
+std::ostream &operator<<(std::ostream &os, X)
+{
+  os << 123;
+  return os;
 }
 
 int main()
 {
-  // abc
-  int* p;
-  f(10);
-  f(std::set<int>{});
+  output(1, 'a', "defq", 1.3, 1.1f, X{});
   return 0;
 }

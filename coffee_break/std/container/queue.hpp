@@ -14,34 +14,34 @@ COFFEE_BREAK_NAMESPACE_BEGIN
 namespace details
 {
 
-  // queue
-  template <typename>
-  struct is_queue : STD_NSS::false_type
-  {
-  };
-  template <typename T, typename ContainerType>
-  struct is_queue<std::queue<T, ContainerType>> : STD_NSS::true_type
-  {
-  };
+// queue
+template <typename>
+struct is_queue : STD_NSS::false_type
+{
+};
+template <typename T, typename ContainerType>
+struct is_queue<std::queue<T, ContainerType>> : STD_NSS::true_type
+{
+};
 
-  template <typename T>
-  inline constexpr bool is_queue_v =
-      COFFEE_BREAK_NSS::details::is_queue<T>::value;
+template <typename T>
+inline constexpr bool is_queue_v =
+    COFFEE_BREAK_NSS::details::is_queue<T>::value;
 
-  // priority_queue
-  template <typename>
-  struct is_priority_queue : STD_NSS::false_type
-  {
-  };
-  template <typename T, typename ContainerType, typename CompareType>
-  struct is_priority_queue<std::priority_queue<T, ContainerType, CompareType>>
-      : STD_NSS::true_type
-  {
-  };
+// priority_queue
+template <typename>
+struct is_priority_queue : STD_NSS::false_type
+{
+};
+template <typename T, typename ContainerType, typename CompareType>
+struct is_priority_queue<std::priority_queue<T, ContainerType, CompareType>>
+    : STD_NSS::true_type
+{
+};
 
-  template <typename T>
-  inline constexpr bool is_priority_queue_v =
-      COFFEE_BREAK_NSS::details::is_priority_queue<T>::value;
+template <typename T>
+inline constexpr bool is_priority_queue_v =
+    COFFEE_BREAK_NSS::details::is_priority_queue<T>::value;
 
 } // namespace details
 

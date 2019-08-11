@@ -13,15 +13,10 @@ COFFEE_BREAK_ARITHMETIC_OPERATABLE(multiplicationable, multiplicationabled, *)
 COFFEE_BREAK_ARITHMETIC_OPERATABLE(divisionable, divisionabled, /)
 COFFEE_BREAK_ARITHMETIC_OPERATABLE(modable, modabled, %)
 
-COFFEE_BREAK_COMPOUND_ASSIGNMENT_OPERATABLE(compound_addable, compound_addabled,
-                                            +=)
-COFFEE_BREAK_COMPOUND_ASSIGNMENT_OPERATABLE(compound_substractable,
-                                            compound_substractabled, -=)
-COFFEE_BREAK_COMPOUND_ASSIGNMENT_OPERATABLE(compound_multiplicationable,
-                                            compound_multiplicationabled, *=)
-COFFEE_BREAK_COMPOUND_ASSIGNMENT_OPERATABLE(compound_divisionable,
-                                            compound_divisionabled, /=)
-COFFEE_BREAK_COMPOUND_ASSIGNMENT_OPERATABLE(compound_modable, compound_modabled,
-                                            %=)
+COFFEE_BREAK_COMPOUND_ASSIGNMENT_OPERATABLE(compound_addable, compound_addabled, +=)
+COFFEE_BREAK_COMPOUND_ASSIGNMENT_OPERATABLE(compound_substractable, compound_substractabled, -=)
+COFFEE_BREAK_COMPOUND_ASSIGNMENT_OPERATABLE(compound_multiplicationable, compound_multiplicationabled, *=)
+COFFEE_BREAK_COMPOUND_ASSIGNMENT_OPERATABLE(compound_divisionable, compound_divisionabled, /=)
+COFFEE_BREAK_COMPOUND_ASSIGNMENT_OPERATABLE(compound_modable, compound_modabled, %=)
 
 #endif // COFFEE_BREAK_OPERATOR_BINARY_HPP
